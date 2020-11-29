@@ -42,7 +42,7 @@ export default class Search extends React.Component {
   render() {
 
     return(
-
+//////////
 <div>
 {/* <Box bgcolor = '#0A194F'> */}
 <About/>
