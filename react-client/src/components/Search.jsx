@@ -8,7 +8,14 @@ import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import { BrowserRouter } from 'react-router-dom';
 import { Route, Switch, Link } from 'react-router-dom';
+import About from './about.jsx'
+// import { styled } from '@material-ui/core/styles';
+import Box from '@material-ui/core/Box' ;
 
+
+// var MyBox = styled(Box)({
+//   bgcolor : '#0A194F'
+// })
 export default class Search extends React.Component {
   constructor(props) {
     super(props)
@@ -36,8 +43,9 @@ export default class Search extends React.Component {
 
     return(
 
-  <div>
-
+<div>
+{/* <Box bgcolor = '#0A194F'> */}
+<About/>
 <FormControl variant="filled">
         <InputLabel htmlFor="filled-age-native-simple">Select brand</InputLabel>
         <Select
@@ -98,6 +106,7 @@ export default class Search extends React.Component {
         </Select>
       </FormControl>
       {list(this.props)}
+      {/* </Box> */}
   </div>
 
   )}
@@ -108,5 +117,6 @@ var list = (props) => (
     <div>
       {props.cars.map((car,i) =>
         <List key = {i} car = {car}/>)}
+
       </div>
       )
