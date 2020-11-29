@@ -6,6 +6,8 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
+import { BrowserRouter } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 
 export default class Search extends React.Component {
   constructor(props) {
@@ -14,9 +16,11 @@ export default class Search extends React.Component {
   }
 
   onChangeBrandHandler(event){
-    this.state.brand = event.target.value
-    console.log(this.state.brand, " on Change")
-    this.props.onSubmitB(this.state.brand)
+    this.setState({
+      brand: event.target.value
+    }, ()=>{
+      this.props.onSubmitB(this.state.brand)
+    })
     }
 
   onChangeYearHandler(event){
@@ -33,8 +37,10 @@ export default class Search extends React.Component {
 
   render() {
     return(
-  <div>
 
+ <Route exact path="/inventory" >
+
+  <div>
 <FormControl variant="filled">
         <InputLabel htmlFor="filled-age-native-simple">Select brand</InputLabel>
         <Select
@@ -95,7 +101,8 @@ export default class Search extends React.Component {
         </Select>
       </FormControl>
       {list(this.props)}
-  </div>)}
+  </div>
+  </Route>)}
 }
 
 var list = (props) => (

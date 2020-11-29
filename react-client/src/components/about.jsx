@@ -5,6 +5,9 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import { styled } from '@material-ui/core/styles';
+import { BrowserRouter } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
+
 
 const MyButton = styled(Button)({
   // background: 'linear-gradient(45deg, #ffea00 30%, #ffff00 90%)',
@@ -40,11 +43,11 @@ render() {
           </IconButton>
           <Typography variant="h6">
 
-          </Typography>
-          <MyButton color="inherit">HOME</MyButton>
-          <MyButton color="inherit">INVENTORY</MyButton>
-          <MyButton color="inherit">ABOUT US</MyButton>
-          <MyButton color="inherit">LOG IN</MyButton>
+          </Typography>...
+          <Link to ="/home"><MyButton color="inherit">HOME</MyButton></Link>
+          <Link to ="/inventory"><MyButton color="inherit">INVENTORY</MyButton></Link>
+          <Link to ="/about"><MyButton color="inherit">ABOUT US</MyButton></Link>
+          <Link to ="/login"><MyButton color="inherit">LOG IN</MyButton></Link>
         </MyToolbar>
         </AppBar>
     </div>
