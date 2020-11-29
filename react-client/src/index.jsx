@@ -15,9 +15,6 @@ import { AppBar, Toolbar, IconButton, Typography, Button } from '@material-ui/co
 import { BrowserRouter } from 'react-router-dom';
 import { Route, Switch, Link } from 'react-router-dom';
 
-var MyBox = styled(Box)({
-  bgcolor : '#0A194F'
-})
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -82,8 +79,11 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <Homepage/>
+      <Box bgcolor = '#0A194F'>
+        <Switch>
+         <Route exact path ='/'><Homepage/></Route>
         {/* <ControlledCarousel/> */}
+
         <Route exact path ='/login'><Login/></Route>
 
         <Route exact path="/inventory" > <Search
@@ -92,8 +92,8 @@ class App extends React.Component {
          onSubmitP = {this.submitPriceHandler.bind(this)}
          cars = {this.state.cars}
         /> </Route>
-         <SimpleContainer/>
-         <Footer/>
+        </Switch>
+        </Box>
         </div>
     )}
 }
