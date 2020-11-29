@@ -1,4 +1,3 @@
-
 import React from 'react';
 import List from './List.jsx';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -8,38 +7,28 @@ import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import { BrowserRouter } from 'react-router-dom';
 import { Route, Switch, Link } from 'react-router-dom';
-
 export default class Search extends React.Component {
   constructor(props) {
     super(props)
     this.state = {brand: "", year: "", price: ""}
   }
-
   onChangeBrandHandler(event){
-    this.setState({
-      brand: event.target.value
-    }, ()=>{
-      this.props.onSubmitB(this.state.brand)
-    })
+    this.state.brand = event.target.value
+    console.log(this.state.brand, " on Change")
+    this.props.onSubmitB(this.state.brand)
     }
-
   onChangeYearHandler(event){
     this.state.year = event.target.value
     console.log(this.state.year, " on Change")
     this.props.onSubmitY(this.state.year)
  }
-
   onChangePriceHandler(event){
       this.state.price = event.target.value
       console.log(this.state.price, " on Change")
       this.props.onSubmitP(this.state.price)
   }
-
   render() {
     return(
-
- <Route exact path="/inventory" >
-
   <div>
 <FormControl variant="filled">
         <InputLabel htmlFor="filled-age-native-simple">Select brand</InputLabel>
@@ -60,7 +49,6 @@ export default class Search extends React.Component {
           <option value="Dodge">Dodge</option>
         </Select>
       </FormControl>
-
       <FormControl variant="filled">
         <InputLabel htmlFor="filled-age-native-simple">Select year</InputLabel>
         <Select
@@ -79,7 +67,6 @@ export default class Search extends React.Component {
           <option value = "2014">2014</option>
         </Select>
       </FormControl>
-
       <FormControl variant="filled">
         <InputLabel htmlFor="filled-age-native-simple">Select price</InputLabel>
         <Select
@@ -102,9 +89,8 @@ export default class Search extends React.Component {
       </FormControl>
       {list(this.props)}
   </div>
-  </Route>)}
+  )}
 }
-
 var list = (props) => (
   //console.log(props.cars)
     <div>
