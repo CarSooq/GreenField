@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
- import About from './about.jsx';
+import About from './about.jsx';
 import Footer from './footer.jsx'
 import SimpleContainer from './qout.jsx';
 import LogoText from './logotext.jsx';
@@ -14,14 +14,14 @@ var MyBox = styled(Box)({
 
 const Homepage = () => {
   return(
-      <MyBox bgcolor = '#0A194F'>
+   <MyBox bgcolor = '#0A194F'>
        <div>
         < About/><br></br><br></br><br></br>
          <LogoText/>
           <SimpleContainer/>
              <Footer/>
         </div>
-       </MyBox>
+      //  </MyBox>
   )
 }
 export default Homepage;

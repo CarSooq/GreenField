@@ -14,7 +14,8 @@ import Login from './components/login.jsx';
 import { AppBar, Toolbar, IconButton, Typography, Button } from '@material-ui/core';
 import { BrowserRouter } from 'react-router-dom';
 import { Route, Switch, Link } from 'react-router-dom';
-
+import SignIn from './components/login.jsx';
+import Signup from './components/Signup.jsx';
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -79,12 +80,13 @@ class App extends React.Component {
   render () {
     return (
       <div>
-      <Box bgcolor = '#0A194F'>
+        {/* <About/> */}
+      {/* <Box bgcolor = '#0A194F'> */}
         <Switch>
          <Route exact path ='/'><Homepage/></Route>
         {/* <ControlledCarousel/> */}
 
-        <Route exact path ='/login'><Login/></Route>
+        <Route exact path ='/login'><SignIn/></Route>
 
         <Route exact path="/inventory" > <Search
          onSubmitB = {this.submitBrandHandler.bind(this)}
@@ -93,7 +95,8 @@ class App extends React.Component {
          cars = {this.state.cars}
         /> </Route>
         </Switch>
-        </Box>
+        <Signup/>
+        {/* </Box> */}
         </div>
     )}
 }
