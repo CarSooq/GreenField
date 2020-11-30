@@ -42,9 +42,9 @@ export default class Search extends React.Component {
   render() {
 
     return(
-//////////
+
 <div>
-{/* <Box bgcolor = '#0A194F'> */}
+
 <About/>
 <FormControl variant="filled">
         <InputLabel htmlFor="filled-age-native-simple">Select brand</InputLabel>
@@ -105,8 +105,9 @@ export default class Search extends React.Component {
       <option value = "11990">11990</option>
         </Select>
       </FormControl>
+      <Box bgcolor = '#0A194F'>
       {list(this.props)}
-      {/* </Box> */}
+      </Box>
   </div>
 
   )}

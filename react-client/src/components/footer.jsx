@@ -14,7 +14,7 @@ const Footer = () => {
    })
 
    var MyBox = styled(Box)({
-     margin : '10px 0px 0px 500px'
+     margin : '10px 10px 10px 400px'
    })
   return(
     <div>
