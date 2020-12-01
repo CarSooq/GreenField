@@ -70,10 +70,8 @@ app.post('/users/login', async (req, res) => {
     }
     hashedPassword = results[0].password;
     //console.log(results[0].password);
-
-  console.log("from try, HIIIIIIi", hashedPassword )
-
-
+  })
+  console.log("from try, HIIIIIIi" )
   // try {
 
   //    if (await bcrypt.compare(req.body.password, hashedPassword)) {
@@ -85,9 +83,6 @@ app.post('/users/login', async (req, res) => {
   //    res.status(500).send()
   //  }
 })
-})
-
-
 
 //JWT Authentication
 // const posts = [{username:"hanoon", password:"hanoona"},{username:"RoRo", password:"Rawaneh"}];
