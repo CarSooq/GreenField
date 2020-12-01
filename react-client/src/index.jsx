@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import About from './components/about.jsx';
 import Footer from './components/footer.jsx';
-// import Login from './components/Login.jsx';
+import SignIn from './components/Login.jsx';
+import Signup from './components/Signup.jsx';
 // import Signup from './components/Signup.jsx';
 import Box from '@material-ui/core/Box' ;
 import LogoText from './components/logotext.jsx';
@@ -12,7 +13,7 @@ import Search from './components/Search.jsx';
 import SimpleContainer from './components/qout.jsx'
 import Homepage from './components/Home.jsx';
 import ControlledCarousel from './components/slider.jsx';
-import Login from './components/login.jsx';
+// import Login from './components/login.jsx';
 import { AppBar, Toolbar, IconButton, Typography, Button } from '@material-ui/core';
 import { BrowserRouter } from 'react-router-dom';
 import { Route, Switch, Link } from 'react-router-dom';
@@ -29,7 +30,7 @@ class App extends React.Component {
 
 
   //Method that handles the "brand" submit input with ajax post request to the server
-     handleSubmit(object) {
+  handleSubmit(object) {
     console.log(object, "Was chosen")
     var that = this
     $.ajax({
@@ -54,11 +55,13 @@ class App extends React.Component {
   render () {
     return (
       <div>
+        <SignIn/>
         <Switch>
+
         <Route exact path="/"> <Homepage/></Route>
         {/* <ControlledCarousel/> */}
-        <Route exact path ='/login'><Login/></Route>
-
+        {/* <Route exact path ='/users/login'><SignIn/></Route> */}
+        <Route exact path ='/users/signup'><Signup/></Route>
         <Route exact path="/inventory" > <Search
          onSubmit = {this.handleSubmit.bind(this)}
          cars = {this.state.cars}
