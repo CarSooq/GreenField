@@ -5,8 +5,8 @@ var data = require('./data.json');
 //our database called stock
 var con = mysql.createConnection({
 host: "localhost",
-user: "abeer",
-password: "0000",
+user: "root",
+password: "12345678",
 database : "stock"
 });
 
@@ -34,10 +34,10 @@ for (var i = 0; i < data.length; i++) {
     let rows = [data[i].brand, data[i].year, data[i].price, data[i].colour, data[i].description,data[i].image,i+1];
       con.query(inserting, rows, function (err, results, fields) {
         if (err) throw err;
-        console.log("Table inserted");
+
       });
 }
-
+console.log("Table inserted");
 
 
 module.exports.con = con;
