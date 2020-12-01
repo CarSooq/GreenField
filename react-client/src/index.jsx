@@ -6,7 +6,7 @@ import Footer from './components/footer.jsx';
 // import Login from './components/Login.jsx';
 // import Signup from './components/Signup.jsx';
 import Box from '@material-ui/core/Box' ;
-import LogoText from './components/logotext.jsx'
+import LogoText from './components/logotext.jsx';
 import { styled } from '@material-ui/core/styles';
 import Search from './components/Search.jsx';
 import SimpleContainer from './components/qout.jsx'
@@ -49,6 +49,7 @@ class App extends React.Component {
   updateState(data){
     this.setState({cars: data})
   }
+
 
   render () {
     return (

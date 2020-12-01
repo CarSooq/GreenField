@@ -36,6 +36,7 @@ for (var i = 0; i < data.length; i++) {
         if (err) throw err;
 
       });
+      console.log("Table inserted");
 }
 console.log("Table inserted");
 
